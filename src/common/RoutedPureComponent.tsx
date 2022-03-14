@@ -23,4 +23,16 @@ export default class RoutedComponent<S = {}> extends PureComponent<
 
     this.router = props.router;
   }
+
+  public shouldComponentUpdate(
+    nextProps: Readonly<IRouterProps>,
+    nextState: Readonly<any>,
+    nextContext: any,
+  ): boolean {
+    if (nextProps.router !== undefined) {
+      this.router = nextProps.router;
+    }
+
+    return true;
+  }
 }
