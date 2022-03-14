@@ -10,7 +10,6 @@ import withRouter from './../common/withRouter';
 import IRouterProps from './../interfaces/IRouterProps';
 import Markdown from './../common/Markdown';
 import { Sidebar } from './Sidebar';
-import { Configuration } from './../common/Configuration';
 
 interface IDocumentationState {
   pageId?: string;
@@ -24,31 +23,46 @@ class Documentation extends RoutedPureComponent<IDocumentationState> {
     super(props);
 
     this.state = {
-      pageId: this.router.params.pageId ?? '',
+      pageId: '',
       markdownContent: <></>,
     };
   }
 
   public componentDidMount(): void {
+    this.renderMarkup();
+  }
+
+  public getSnapshotBeforeUpdate(
+    prevProps: Readonly<IRouterProps>,
+    prevState: Readonly<IDocumentationState>,
+  ) {
+    let currentRouter = this.router.params?.pageId ?? '';
+
+    if (this.state.pageId === currentRouter) return;
+
+    this.renderMarkup();
+  }
+
+  private renderMarkup(): void {
+    if (this.router.params.pageId === this.state.pageId) return;
+
     let markdownPath = '';
 
-    if (this.state.pageId !== '' && this.state.pageId !== undefined) {
-      markdownPath = this.state.pageId.toUpperCase();
+    if (
+      this.router.params.pageId !== '' &&
+      this.router.params.pageId !== undefined
+    ) {
+      markdownPath = this.router.params.pageId.toUpperCase();
     } else {
       markdownPath = 'README';
     }
 
-    markdownPath = Configuration.markdowns + markdownPath + '.md';
-
-    this.fetchAndPrintMarkdown(markdownPath);
-  }
-
-  private fetchAndPrintMarkdown(url: string): void {
-    fetch(url)
-      .then(response => response.text())
-      .then(data => {
-        this.setState({ markdownContent: Markdown.parse(data) });
+    Markdown.staticFetchAndParse(markdownPath, e => {
+      this.setState({
+        markdownContent: e,
+        pageId: this.router.params.pageId ?? '',
       });
+    });
   }
 
   public render(): JSX.Element {

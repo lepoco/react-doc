@@ -83,7 +83,7 @@ class Layout extends RoutedPureComponent<ILayoutState> {
                     <NavLink
                       className="nav-link"
                       aria-current="page"
-                      to="/documentation/tutorial">
+                      to="/documentation/tutorial/" end>
                       Tutorial
                     </NavLink>
                   </li>
@@ -91,7 +91,7 @@ class Layout extends RoutedPureComponent<ILayoutState> {
                     <NavLink
                       className="nav-link"
                       aria-current="page"
-                      to="/documentation" end>
+                      to="/documentation/" end>
                       Documentation
                     </NavLink>
                   </li>
@@ -106,7 +106,7 @@ class Layout extends RoutedPureComponent<ILayoutState> {
             <div className="row">
               <div className="col-12"></div>
               <div className="col-12">
-                Build with:
+                Build with
                 <a
                   target="_blank"
                   rel="noopener nofollow noreferrer"

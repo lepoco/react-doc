@@ -22,10 +22,11 @@ class App extends RoutedComponent {
     return (
       <Layout>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/support" element={<Support />} />
-          <Route path="/documentation" element={<Documentation />} />
-          <Route path="/documentation/:pageId" element={<Documentation />} />
+          <Route index element={<Home />} />
+          <Route path="support" element={<Support />} />
+          <Route path="documentation" element={<Documentation />}>
+            <Route path=":pageId" element={<Documentation />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>

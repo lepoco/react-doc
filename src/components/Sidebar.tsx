@@ -18,7 +18,7 @@ export class Sidebar extends PureComponent {
         <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item">
             <NavLink
-              to="/documentation"
+              to="/documentation/"
               className="nav-link text-white readme" end>
               <AccessTime20Filled className="me-2" />
               <div className="nav-title">Home</div>
@@ -34,40 +34,40 @@ export class Sidebar extends PureComponent {
           </li>
           <li className="nav-item">
             <NavLink
-              to="/documentation/themes"
-              className="nav-link text-white themes">
+              to="/documentation/themes/"
+              className="nav-link text-white themes" end>
               <AccessTime20Filled className="me-2" />
               <div className="nav-title">Themes</div>
             </NavLink>
           </li>
           <li className="nav-item">
             <NavLink
-              to="/documentation/colors"
-              className="nav-link text-white colors">
+              to="/documentation/colors/"
+              className="nav-link text-white colors" end>
               <AccessTime20Filled className="me-2" />
               <div className="nav-title">Colors</div>
             </NavLink>
           </li>
           <li className="nav-item">
             <NavLink
-              to="/documentation/controls"
-              className="nav-link text-white controls">
+              to="/documentation/controls/"
+              className="nav-link text-white controls" end>
               <AccessTime20Filled className="me-2" />
               <div className="nav-title">Controls</div>
             </NavLink>
           </li>
           <li className="nav-item">
             <NavLink
-              to="/documentation/forms"
-              className="nav-link text-white forms">
+              to="/documentation/forms/"
+              className="nav-link text-white forms" end>
               <AccessTime20Filled className="me-2" />
               <div className="nav-title">Forms</div>
             </NavLink>
           </li>
           <li className="nav-item">
             <NavLink
-              to="/documentation/background"
-              className="nav-link text-white background">
+              to="/documentation/background/"
+              className="nav-link text-white background" end>
               <AccessTime20Filled className="me-2" />
               <span className="nav-title">Backgrounds</span>
             </NavLink>
