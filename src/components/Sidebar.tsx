@@ -14,12 +14,12 @@ export class Sidebar extends PureComponent {
 
   public render(): JSX.Element {
     return (
-      <div className="sidebar d-flex flex-column flex-shrink-0 p-3 text-white bg-dark">
+      <div className="sidebar d-flex flex-column flex-shrink-0 p-3 text-white">
         <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item">
             <NavLink
-              to="/documentation/"
-              className="nav-link text-white readme">
+              to="/documentation"
+              className="nav-link text-white readme" end>
               <AccessTime20Filled className="me-2" />
               <div className="nav-title">Home</div>
             </NavLink>

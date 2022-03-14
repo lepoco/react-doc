@@ -7,7 +7,7 @@
 
 import { Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
@@ -17,11 +17,11 @@ const baseUrl: string =
   document.getElementsByTagName('base')[0].getAttribute('href') ?? '';
 
 ReactDOM.render(
-  <Router basename={baseUrl}>
+  <BrowserRouter basename={baseUrl}>
     <Suspense fallback={<div>Loading...</div>}>
       <App />
     </Suspense>
-  </Router>,
+  </BrowserRouter>,
   document.getElementById('root'),
 );
 

@@ -38,7 +38,7 @@ class Layout extends RoutedPureComponent<ILayoutState> {
       <>
         <header>
           <nav className="navbar navbar-expand-lg navbar-dark">
-            <div className="container">
+            <div className="container-fluid">
               <Link className="navbar-brand -flex-center" to="/">
                 <img
                   className="navbar-logo"
@@ -83,7 +83,7 @@ class Layout extends RoutedPureComponent<ILayoutState> {
                     <NavLink
                       className="nav-link"
                       aria-current="page"
-                      to="/tutorial/">
+                      to="/documentation/tutorial">
                       Tutorial
                     </NavLink>
                   </li>
@@ -91,7 +91,7 @@ class Layout extends RoutedPureComponent<ILayoutState> {
                     <NavLink
                       className="nav-link"
                       aria-current="page"
-                      to="/documentation/">
+                      to="/documentation" end>
                       Documentation
                     </NavLink>
                   </li>
@@ -102,7 +102,7 @@ class Layout extends RoutedPureComponent<ILayoutState> {
         </header>
         <main>{this.props.children}</main>
         <footer>
-          <div className="container">
+          <div className="container-fluid">
             <div className="row">
               <div className="col-12"></div>
               <div className="col-12">

@@ -33,12 +33,22 @@
   }
 
   pre {
-    padding: 16px;
+    padding: 1rem;
     background-color: #222222;
     border-radius: 6px;
     font-size: 85%;
     line-height: 1.45;
     overflow: auto;
+  }
+
+  code:not(.hljs) {
+    margin: 0;
+    padding: 0.2em 0.4em;
+    background-color: $background-secondary;
+    color: #c9d1d9;
+    border-radius: 6px;
+    font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+    font-size: 85%;
   }
 
   .hljs {

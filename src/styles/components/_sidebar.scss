@@ -1,11 +1,6 @@
 .sidebar {
   min-width: 240px;
-
-  .nav-link {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
+  border-right: 1px solid $border-primary;
 
   @include media-breakpoint-down(md) {
     min-width: 0px;
@@ -18,5 +13,16 @@
         margin-right: 0rem !important;
       }
     }
+  }
+
+  .nav-link {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .nav-pills .nav-link.active,
+  .nav-pills .show > .nav-link {
+    background-color: $accent-primary;
   }
 }

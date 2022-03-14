@@ -1,6 +1,14 @@
 header {
   color: #fff;
-  background-color: $accent-primary;
+  background-color: transparent;
+  border-bottom: 1px solid $border-primary;
+
+  .navbar {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 
   .navbar-dark {
     .navbar-brand {
