@@ -5,11 +5,12 @@
  * All Rights Reserved.
  */
 
-/**
- * Contains the logic for a component that is part of the DOM router.
- */
+import { marked } from 'marked';
+
 export default class Markdown {
-  public static fetch(url: string): JSX.Element {
-    return <p>Hello World</p>;
+  public static parse(rawText: string): JSX.Element {
+    return (
+      <div className='markdown' dangerouslySetInnerHTML={{ __html: marked.parse(rawText) }}></div>
+    );
   }
 }
