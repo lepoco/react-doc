@@ -1,6 +1,6 @@
 {
-  "name": "lepo.dev",
-  "version": "8.0.0",
+  "name": "react-doc",
+  "version": "1.0.0",
   "private": true,
   "devDependencies": {
     "@types/jest": "^27.4.0",
