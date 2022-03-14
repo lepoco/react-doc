@@ -32,10 +32,7 @@ class Documentation extends RoutedPureComponent<IDocumentationState> {
     this.renderMarkup();
   }
 
-  public getSnapshotBeforeUpdate(
-    prevProps: Readonly<IRouterProps>,
-    prevState: Readonly<IDocumentationState>,
-  ) {
+  public navigated(): void {
     let currentRouter = this.router.params?.pageId ?? '';
 
     if (this.state.pageId === currentRouter) return;
