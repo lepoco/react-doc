@@ -9,8 +9,8 @@ import RoutedPureComponent from './../common/RoutedPureComponent';
 import withRouter from './../common/withRouter';
 import IRouterProps from './../interfaces/IRouterProps';
 import Markdown from './../common/Markdown';
+import { Sidebar } from './Sidebar';
 import { Configuration } from './../common/Configuration';
-import { Link } from 'react-router-dom';
 
 interface IDocumentationState {
   pageId?: string;
@@ -52,7 +52,12 @@ class Documentation extends RoutedPureComponent<IDocumentationState> {
   }
 
   public render(): JSX.Element {
-    return <>{this.state.markdownContent}</>;
+    return (
+      <>
+        <Sidebar />
+        <div>{this.state.markdownContent}</div>
+      </>
+    );
   }
 }
 

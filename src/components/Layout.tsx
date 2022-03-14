@@ -75,7 +75,7 @@ class Layout extends RoutedPureComponent<ILayoutState> {
                     <NavLink
                       className="nav-link"
                       aria-current="page"
-                      to="/support">
+                      to="/support/">
                       Support
                     </NavLink>
                   </li>
@@ -83,7 +83,7 @@ class Layout extends RoutedPureComponent<ILayoutState> {
                     <NavLink
                       className="nav-link"
                       aria-current="page"
-                      to="/tutorial">
+                      to="/tutorial/">
                       Tutorial
                     </NavLink>
                   </li>
@@ -91,7 +91,7 @@ class Layout extends RoutedPureComponent<ILayoutState> {
                     <NavLink
                       className="nav-link"
                       aria-current="page"
-                      to="/documentation">
+                      to="/documentation/">
                       Documentation
                     </NavLink>
                   </li>

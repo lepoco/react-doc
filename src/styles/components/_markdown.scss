@@ -1,3 +1,47 @@
+@import "~highlight.js/scss/atom-one-dark.scss";
+
 .markdown {
-  padding: 2rem;
+  padding: 4rem;
+
+  @include media-breakpoint-down(md) {
+    padding: 1rem;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  p {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+  h1 {
+    border-bottom: 1px solid $border-primary;
+  }
+
+  h2 {
+    margin-top: 3rem;
+  }
+
+  h3 {
+    margin-top: 2rem;
+  }
+
+  h4 {
+    margin-top: 1rem;
+  }
+
+  pre {
+    padding: 16px;
+    background-color: #222222;
+    border-radius: 6px;
+    font-size: 85%;
+    line-height: 1.45;
+    overflow: auto;
+  }
+
+  .hljs {
+    background: transparent;
+  }
 }

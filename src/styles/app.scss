@@ -8,11 +8,13 @@
 @charset "UTF-8";
 
 @import "~bootstrap/scss/bootstrap";
+
 @import "variables";
 @import "fonts";
+
 @import "components/modifiers";
 @import "components/global";
 @import "components/header";
 @import "components/footer";
-@import "components/highlight";
+@import "components/sidebar";
 @import "components/markdown";

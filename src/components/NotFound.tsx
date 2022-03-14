@@ -6,7 +6,6 @@
  */
 
 import { PureComponent } from 'react';
-import { Link } from 'react-router-dom';
 
 export class NotFound extends PureComponent {
   public static displayName: string = NotFound.name;

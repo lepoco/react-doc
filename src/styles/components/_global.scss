@@ -20,8 +20,9 @@ body {
       flex: 1;
       width: 100%;
 
-      & > div {
-        width: 100%;
+      & > div:not(.sidebar) {
+        flex: 1;
+        //width: 100%;
       }
     }
   }
@@ -42,4 +43,14 @@ a {
   &:hover {
     color: $foreground-primary;
   }
+}
+
+code:not(.hljs) {
+  margin: 0;
+  padding: 0.2em 0.4em;
+  background-color: $background-secondary;
+  color: #c9d1d9;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-size: 85%;
 }

@@ -1,0 +1,22 @@
+.sidebar {
+  min-width: 240px;
+
+  .nav-link {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  @include media-breakpoint-down(md) {
+    min-width: 0px;
+
+    .nav-item {
+      .nav-title {
+        display: none;
+      }
+      .me-2 {
+        margin-right: 0rem !important;
+      }
+    }
+  }
+}
