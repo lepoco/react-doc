@@ -1,0 +1,55 @@
+# We define routing behavior and cache here
+
+Options All -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On 
+  RewriteCond %{HTTPS} off 
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_URI} !^/index.html$
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !\.(xml|css|ico|jpg|js|png|swf|txt|svg|json|webmanifest)$
+  RewriteRule . index.html [L]
+</IfModule>
+
+<FilesMatch "\.(html)$">
+  Header set Content-Type "text/html; charset=utf-8"
+  Header set Cache-Control "max-age=180, immutable"
+  Header set X-Content-Type-Options "nosniff"
+  Header set Strict-Transport-Security "max-age=31536000; preload"
+  Header set Vary "Origin, Digest, Accept-Encoding"
+  Header set Accept-Ranges "bytes"
+  Header set Connection "keep-alive, close"
+  Header set Upgrade-Insecure-Requests "1"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Access-Control-Allow-Origin "https://dev.lepo.co, https://fonts.googleapis.com, https://fonts.gstatic.com"
+</FilesMatch>
+
+<FilesMatch "\.(webmanifest)$">
+  Header set Content-Type "application/manifest+json; charset=utf-8"
+  Header set Cache-Control "max-age=31536000, immutable"
+  Header set X-Content-Type-Options "nosniff"
+</FilesMatch>
+
+<FilesMatch "\.(js)$">
+  Header set Content-Type "text/javascript; charset=utf-8"
+  Header set Cache-Control "max-age=31536000, immutable"
+  Header set X-Content-Type-Options "nosniff"
+</FilesMatch>
+
+<FilesMatch "\.(css)$">
+  Header set Content-Type "text/css; charset=utf-8"
+  Header set Cache-Control "max-age=31536000, immutable"
+  Header set X-Content-Type-Options "nosniff"
+</FilesMatch>
+
+<FilesMatch "\.(ico|pdf|webp|jpg|jpeg|png|gif|svg|svg+xml|json|txt)$">
+  AddDefaultCharset UTF-8
+  Header set Cache-Control "max-age=31536000, immutable"
+  Header set X-Content-Type-Options "nosniff"
+</FilesMatch>
