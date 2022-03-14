@@ -14,7 +14,9 @@ export class Home extends PureComponent {
   public render(): JSX.Element {
     return (
       <>
-        <p>Home</p>
+        <div className="container">
+          <p>Home</p>
+        </div>
       </>
     );
   }

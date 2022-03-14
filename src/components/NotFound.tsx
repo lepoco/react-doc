@@ -14,7 +14,12 @@ export class NotFound extends PureComponent {
   public render(): JSX.Element {
     return (
       <>
-        <p>Not Found</p>
+        <div className="-flex-center">
+          <div className="container">
+            <h1 className="display-1">404</h1>
+            <p>This is not the web page you are looking for.</p>
+          </div>
+        </div>
       </>
     );
   }
