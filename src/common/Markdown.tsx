@@ -7,13 +7,13 @@
 
 import { marked } from 'marked';
 import Highlight from 'react-highlight';
-import { Configuration } from './../common/Configuration';
+import { Config } from './../Config';
 
 export default class Markdown {
   public static async fetchAndParse(
     markdownPath: string,
   ): Promise<JSX.Element> {
-    markdownPath = Configuration.markdowns + markdownPath + '.md';
+    markdownPath = Config.markdowns + markdownPath + '.md';
 
     let response = await fetch(markdownPath, {
       method: 'GET',
@@ -26,7 +26,7 @@ export default class Markdown {
     markdownPath: string,
     callback: (n: JSX.Element) => void,
   ): void {
-    markdownPath = Configuration.markdowns + markdownPath + '.md';
+    markdownPath = Config.markdowns + markdownPath + '.md';
 
     fetch(markdownPath)
       .then(response => response.text())

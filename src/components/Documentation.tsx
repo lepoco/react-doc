@@ -60,7 +60,7 @@ class Documentation extends RoutedPureComponent<IDocumentationState> {
     Markdown.staticFetchAndParse(markdownPath, e => {
       this.setState({
         markdownContent: e,
-        pageId: this.router.params.pageId ?? '',
+        pageId: this.router.params?.pageId ?? '',
       });
     });
   }

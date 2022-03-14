@@ -7,7 +7,7 @@
 
 import { PureComponent } from 'react';
 import { NavLink } from 'react-router-dom';
-import { AccessTime20Filled } from '@fluentui/react-icons';
+import { Config } from './../Config';
 
 export class Sidebar extends PureComponent {
   public static displayName: string = Sidebar.name;
@@ -16,62 +16,19 @@ export class Sidebar extends PureComponent {
     return (
       <div className="sidebar d-flex flex-column flex-shrink-0 p-3 text-white">
         <ul className="nav nav-pills flex-column mb-auto">
-          <li className="nav-item">
-            <NavLink
-              to="/documentation/"
-              className="nav-link text-white readme" end>
-              <AccessTime20Filled className="me-2" />
-              <div className="nav-title">Home</div>
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              to="/documentation/tutorial"
-              className="nav-link text-white tutorial">
-              <AccessTime20Filled className="me-2" />
-              <div className="nav-title">Tutorial</div>
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              to="/documentation/themes/"
-              className="nav-link text-white themes" end>
-              <AccessTime20Filled className="me-2" />
-              <div className="nav-title">Themes</div>
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              to="/documentation/colors/"
-              className="nav-link text-white colors" end>
-              <AccessTime20Filled className="me-2" />
-              <div className="nav-title">Colors</div>
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              to="/documentation/controls/"
-              className="nav-link text-white controls" end>
-              <AccessTime20Filled className="me-2" />
-              <div className="nav-title">Controls</div>
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              to="/documentation/forms/"
-              className="nav-link text-white forms" end>
-              <AccessTime20Filled className="me-2" />
-              <div className="nav-title">Forms</div>
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              to="/documentation/background/"
-              className="nav-link text-white background" end>
-              <AccessTime20Filled className="me-2" />
-              <span className="nav-title">Backgrounds</span>
-            </NavLink>
-          </li>
+          {Config.sidebar.map(function (element, index) {
+            return (
+              <li className="nav-item">
+                <NavLink
+                  to={element.path}
+                  className="nav-link text-white readme"
+                  end>
+                  <element.icon className='me-2' />
+                  <div className="nav-title">{element.name}</div>
+                </NavLink>
+              </li>
+            );
+          })}
         </ul>
       </div>
     );

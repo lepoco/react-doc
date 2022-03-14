@@ -1,6 +1,8 @@
 @import "~highlight.js/scss/atom-one-dark.scss";
 
 .markdown {
+  position: relative;
+  display: block;
   padding: 4rem;
 
   @include media-breakpoint-down(md) {
@@ -38,7 +40,9 @@
     border-radius: 6px;
     font-size: 85%;
     line-height: 1.45;
-    overflow: auto;
+
+    code {
+    }
   }
 
   code:not(.hljs) {

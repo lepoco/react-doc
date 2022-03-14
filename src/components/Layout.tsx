@@ -9,7 +9,7 @@ import RoutedPureComponent from './../common/RoutedPureComponent';
 import withRouter from './../common/withRouter';
 import IRouterProps from './../interfaces/IRouterProps';
 import { Link, NavLink } from 'react-router-dom';
-import { Configuration } from './../common/Configuration';
+import { Config } from './../Config';
 
 interface ILayoutState {
   isNavbarCollapsed: boolean;
@@ -43,10 +43,10 @@ class Layout extends RoutedPureComponent<ILayoutState> {
                 <img
                   className="navbar-logo"
                   height="24"
-                  src={Configuration.logo}
+                  src={Config.logo}
                   alt="React Doc Logo"
                 />
-                {Configuration.siteName}
+                {Config.siteName}
               </Link>
               <button
                 onClick={e => this.onNavClick(e)}
@@ -66,35 +66,18 @@ class Layout extends RoutedPureComponent<ILayoutState> {
                 id="bootstrap-navbar">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0"></ul>
                 <ul className="navbar-nav ml-auto">
-                  <li className="nav-item">
-                    <NavLink className="nav-link" aria-current="page" to="/">
-                      Home
-                    </NavLink>
-                  </li>
-                  <li className="nav-item">
-                    <NavLink
-                      className="nav-link"
-                      aria-current="page"
-                      to="/support/">
-                      Support
-                    </NavLink>
-                  </li>
-                  <li className="nav-item">
-                    <NavLink
-                      className="nav-link"
-                      aria-current="page"
-                      to="/documentation/tutorial/" end>
-                      Tutorial
-                    </NavLink>
-                  </li>
-                  <li className="nav-item">
-                    <NavLink
-                      className="nav-link"
-                      aria-current="page"
-                      to="/documentation/" end>
-                      Documentation
-                    </NavLink>
-                  </li>
+                  {Config.menu.map(function (element, index) {
+                    return (
+                      <li key={index} className="nav-item">
+                        <NavLink
+                          className="nav-link"
+                          aria-current="page"
+                          to={element.path} end>
+                          {element.name}
+                        </NavLink>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>
