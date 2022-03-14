@@ -23,8 +23,6 @@ class Documentation extends RoutedPureComponent<IDocumentationState> {
     this.state = {
       pageId: this.router.params.pageId ?? '',
     };
-
-    console.log(this.state);
   }
 
   public render(): JSX.Element {

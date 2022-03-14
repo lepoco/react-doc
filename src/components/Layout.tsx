@@ -19,8 +19,6 @@ class Layout extends RoutedPureComponent<ILayoutState> {
   public constructor(props: IRouterProps) {
     super(props);
     this.state = {};
-
-    console.log(Configuration);
   }
 
   public render(): JSX.Element {
@@ -91,7 +89,14 @@ class Layout extends RoutedPureComponent<ILayoutState> {
             <div className="row">
               <div className="col-12"></div>
               <div className="col-12">
-                Made with:
+                Build with:
+                <a
+                  target="_blank"
+                  rel="noopener nofollow noreferrer"
+                  href="https://github.com/lepoco/react-doc">
+                  <code> react-doc </code>
+                </a>
+                based on:
                 <a
                   target="_blank"
                   rel="noopener nofollow noreferrer"
