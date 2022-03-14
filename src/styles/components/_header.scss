@@ -1,0 +1,22 @@
+header {
+  color: #fff;
+  background-color: $accent-primary;
+
+  .navbar-dark {
+    .navbar-brand {
+      color: #fff;
+      font-family: $f-primary;
+      font-weight: bold;
+    }
+  }
+
+  .navbar-logo {
+    margin-right: 0.5rem;
+  }
+
+  .nav-pills .nav-link.active,
+  .nav-pills .show > .nav-link {
+    background-color: $accent-primary;
+    color: #fff;
+  }
+}

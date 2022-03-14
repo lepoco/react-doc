@@ -1,0 +1,36 @@
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  min-height: 100%;
+  background: $background-primary;
+  color: $foreground-primary;
+
+  #root {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $f-primary;
+}
+
+a {
+  color: $accent-primary;
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex: 1;
+}
