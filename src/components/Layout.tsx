@@ -8,7 +8,8 @@
 import RoutedPureComponent from './../common/RoutedPureComponent';
 import withRouter from './../common/withRouter';
 import IRouterProps from './../interfaces/IRouterProps';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { Configuration } from './../common/Configuration';
 
 interface ILayoutState {}
 
@@ -18,6 +19,8 @@ class Layout extends RoutedPureComponent<ILayoutState> {
   public constructor(props: IRouterProps) {
     super(props);
     this.state = {};
+
+    console.log(Configuration);
   }
 
   public render(): JSX.Element {
@@ -30,10 +33,10 @@ class Layout extends RoutedPureComponent<ILayoutState> {
                 <img
                   className="navbar-logo"
                   height="24"
-                  src="img/react-doc.png"
+                  src={Configuration.logo}
                   alt="React Doc Logo"
                 />
-                React Doc
+                {Configuration.siteName}
               </Link>
               <button
                 className="navbar-toggler"
@@ -49,17 +52,33 @@ class Layout extends RoutedPureComponent<ILayoutState> {
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0"></ul>
                 <ul className="navbar-nav ml-auto">
                   <li className="nav-item">
-                    <Link className="nav-link" aria-current="page" to="/">
+                    <NavLink className="nav-link" aria-current="page" to="/">
                       Home
-                    </Link>
+                    </NavLink>
                   </li>
                   <li className="nav-item">
-                    <Link
+                    <NavLink
+                      className="nav-link"
+                      aria-current="page"
+                      to="/support">
+                      Support
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      className="nav-link"
+                      aria-current="page"
+                      to="/tutorial">
+                      Tutorial
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
                       className="nav-link"
                       aria-current="page"
                       to="/documentation">
                       Documentation
-                    </Link>
+                    </NavLink>
                   </li>
                 </ul>
               </div>
@@ -84,6 +103,12 @@ class Layout extends RoutedPureComponent<ILayoutState> {
                   rel="noopener nofollow noreferrer"
                   href="https://getbootstrap.com/">
                   <code> bootstrap</code>
+                </a>
+                <a
+                  target="_blank"
+                  rel="noopener nofollow noreferrer"
+                  href="https://github.com/microsoft/fluentui-system-icons">
+                  <code> fluent-system-icons</code>
                 </a>
                 <a
                   target="_blank"
