@@ -5,11 +5,20 @@
  * All Rights Reserved.
  */
 
-import { PureComponent } from 'react';
+import RoutedPureComponent from './../common/RoutedPureComponent';
+import withRouter from './../common/withRouter';
+import IRouterProps from './../interfaces/IRouterProps';
 import { Link } from 'react-router-dom';
 
-export class Layout extends PureComponent {
+interface ILayoutState {}
+
+class Layout extends RoutedPureComponent<ILayoutState> {
   public static displayName: string = Layout.name;
+
+  public constructor(props: IRouterProps) {
+    super(props);
+    this.state = {};
+  }
 
   public render(): JSX.Element {
     return (
@@ -99,3 +108,5 @@ export class Layout extends PureComponent {
     );
   }
 }
+
+export default withRouter(Layout);

@@ -9,10 +9,10 @@ import { Route, Routes } from 'react-router-dom';
 import RoutedComponent from './common/RoutedComponent';
 import withRouter from './common/withRouter';
 
-import { Layout } from './components/Layout';
+import Layout from './components/Layout';
 import { Home } from './components/Home';
 import { Tutorial } from './components/Tutorial';
-import { Documentation } from './components/Documentation';
+import Documentation from './components/Documentation';
 import { NotFound } from './components/NotFound';
 
 class App extends RoutedComponent {
@@ -25,6 +25,7 @@ class App extends RoutedComponent {
           <Route path="/" element={<Home />} />
           <Route path="/tutorial" element={<Tutorial />} />
           <Route path="/documentation" element={<Documentation />} />
+          <Route path="/documentation/:pageId" element={<Documentation />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>

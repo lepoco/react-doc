@@ -5,18 +5,35 @@
  * All Rights Reserved.
  */
 
- import { PureComponent } from 'react';
- import { Link } from 'react-router-dom';
- 
- export class Documentation extends PureComponent {
-   public static displayName: string = Documentation.name;
- 
-   public render(): JSX.Element {
-     return (
-       <>
-         <p>Documentation</p>
-       </>
-     );
-   }
- }
- 
+import RoutedPureComponent from './../common/RoutedPureComponent';
+import withRouter from './../common/withRouter';
+import IRouterProps from './../interfaces/IRouterProps';
+import { Link } from 'react-router-dom';
+
+interface IDocumentationState {
+  pageId?: string;
+}
+
+class Documentation extends RoutedPureComponent<IDocumentationState> {
+  public static displayName: string = Documentation.name;
+
+  public constructor(props: IRouterProps) {
+    super(props);
+
+    this.state = {
+      pageId: this.router.params.pageId ?? '',
+    };
+
+    console.log(this.state);
+  }
+
+  public render(): JSX.Element {
+    return (
+      <>
+        <p>Documentation</p>
+      </>
+    );
+  }
+}
+
+export default withRouter(Documentation);
