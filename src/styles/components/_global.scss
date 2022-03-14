@@ -28,6 +28,10 @@ h5 {
 a {
   color: $accent-primary;
   text-decoration: none;
+
+  &:hover {
+    color: $foreground-primary;
+  }
 }
 
 main {

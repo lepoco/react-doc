@@ -21,7 +21,7 @@ export class Layout extends PureComponent {
                 <img
                   className="navbar-logo"
                   height="24"
-                  src="img/logo.png"
+                  src="img/react-doc.png"
                   alt="React Doc Logo"
                 />
                 React Doc
@@ -45,30 +45,12 @@ export class Layout extends PureComponent {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <a
-                      className="nav-link active"
+                    <Link
+                      className="nav-link"
                       aria-current="page"
-                      href="https://lepoco.github.io/wpfui/docs.html">
+                      to="/documentation">
                       Documentation
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a
-                      className="nav-link"
-                      target="_blank"
-                      rel="noopener noreferrer nofollow"
-                      href="https://www.nuget.org/packages/WPF-UI/">
-                      NuGet
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a
-                      className="nav-link"
-                      target="_blank"
-                      rel="noopener noreferrer nofollow"
-                      href="https://github.com/lepoco/wpfui">
-                      GitHub
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -97,7 +79,7 @@ export class Layout extends PureComponent {
                 <a
                   target="_blank"
                   rel="noopener nofollow noreferrer"
-                  href="https://github.com/highlightjs/highlight.js/">
+                  href="https://highlightjs.org/">
                   <code> highlight.js</code>
                 </a>
                 <a

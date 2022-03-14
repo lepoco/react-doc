@@ -11,6 +11,8 @@ import withRouter from './common/withRouter';
 
 import { Layout } from './components/Layout';
 import { Home } from './components/Home';
+import { Tutorial } from './components/Tutorial';
+import { Documentation } from './components/Documentation';
 import { NotFound } from './components/NotFound';
 
 class App extends RoutedComponent {
@@ -21,6 +23,8 @@ class App extends RoutedComponent {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/tutorial" element={<Tutorial />} />
+          <Route path="/documentation" element={<Documentation />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
