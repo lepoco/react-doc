@@ -21,7 +21,7 @@ class Layout extends RoutedPureComponent<ILayoutState> {
   public constructor(props: IRouterProps) {
     super(props);
     this.state = {
-      isNavbarCollapsed: true
+      isNavbarCollapsed: true,
     };
 
     this.onNavClick = this.onNavClick.bind(this);
@@ -30,7 +30,7 @@ class Layout extends RoutedPureComponent<ILayoutState> {
   private onNavClick(
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
   ): void {
-    this.setState({isNavbarCollapsed: !this.state.isNavbarCollapsed});
+    this.setState({ isNavbarCollapsed: !this.state.isNavbarCollapsed });
   }
 
   public render(): JSX.Element {
@@ -59,7 +59,11 @@ class Layout extends RoutedPureComponent<ILayoutState> {
                 aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
               </button>
-              <div className={`${this.state.isNavbarCollapsed ? 'collapse' : ''} navbar-collapse`} id="bootstrap-navbar">
+              <div
+                className={`${
+                  this.state.isNavbarCollapsed ? 'collapse' : ''
+                } navbar-collapse`}
+                id="bootstrap-navbar">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0"></ul>
                 <ul className="navbar-nav ml-auto">
                   <li className="nav-item">
@@ -119,6 +123,18 @@ class Layout extends RoutedPureComponent<ILayoutState> {
                 <a
                   target="_blank"
                   rel="noopener nofollow noreferrer"
+                  href="https://react-highlight.neostack.com/">
+                  <code> react-highlight</code>
+                </a>
+                <a
+                  target="_blank"
+                  rel="noopener nofollow noreferrer"
+                  href="https://marked.js.org/">
+                  <code> marked.js</code>
+                </a>
+                <a
+                  target="_blank"
+                  rel="noopener nofollow noreferrer"
                   href="https://getbootstrap.com/">
                   <code> bootstrap</code>
                 </a>
@@ -127,18 +143,6 @@ class Layout extends RoutedPureComponent<ILayoutState> {
                   rel="noopener nofollow noreferrer"
                   href="https://github.com/microsoft/fluentui-system-icons">
                   <code> fluent-system-icons</code>
-                </a>
-                <a
-                  target="_blank"
-                  rel="noopener nofollow noreferrer"
-                  href="https://highlightjs.org/">
-                  <code> highlight.js</code>
-                </a>
-                <a
-                  target="_blank"
-                  rel="noopener nofollow noreferrer"
-                  href="https://marked.js.org/">
-                  <code> marked.js</code>
                 </a>
               </div>
               <div className="col-12">
