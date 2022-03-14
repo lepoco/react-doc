@@ -11,14 +11,26 @@ import IRouterProps from './../interfaces/IRouterProps';
 import { Link, NavLink } from 'react-router-dom';
 import { Configuration } from './../common/Configuration';
 
-interface ILayoutState {}
+interface ILayoutState {
+  isNavbarCollapsed: boolean;
+}
 
 class Layout extends RoutedPureComponent<ILayoutState> {
   public static displayName: string = Layout.name;
 
   public constructor(props: IRouterProps) {
     super(props);
-    this.state = {};
+    this.state = {
+      isNavbarCollapsed: true
+    };
+
+    this.onNavClick = this.onNavClick.bind(this);
+  }
+
+  private onNavClick(
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+  ): void {
+    this.setState({isNavbarCollapsed: !this.state.isNavbarCollapsed});
   }
 
   public render(): JSX.Element {
@@ -37,16 +49,17 @@ class Layout extends RoutedPureComponent<ILayoutState> {
                 {Configuration.siteName}
               </Link>
               <button
+                onClick={e => this.onNavClick(e)}
                 className="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#wpfui-navbar"
-                aria-controls="wpfui-navbar"
+                data-bs-target="#bootstrap-navbar"
+                aria-controls="bootstrap-navbar"
                 aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
               </button>
-              <div className="collapse navbar-collapse" id="wpfui-navbar">
+              <div className={`${this.state.isNavbarCollapsed ? 'collapse' : ''} navbar-collapse`} id="bootstrap-navbar">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0"></ul>
                 <ul className="navbar-nav ml-auto">
                   <li className="nav-item">
